@@ -7,3 +7,44 @@
 //
 
 import Foundation
+import Alamofire
+
+enum NetworkingRouter: RouterProtocol {
+
+    case getAds()
+    case getImages()
+
+    public var baseURL: URL {
+        switch self {
+        case .getAds:
+            return FinnAPI.getAds
+        case .getImages:
+            return FinnAPI.getImages
+
+        }
+    }
+
+    var headers: [String:String]? {
+        switch self {
+        case .getImages, .getAds:
+            return ["Content-type": "application/json"]
+        }
+    }
+
+    var method: HTTPMethod {
+        switch self {
+        case .getImages, .getAds:
+            return .get
+        }
+    }
+
+    public var parameters: [String:Any]? {
+        switch self {
+        case .getAds:
+            return nil
+        case .getImages:
+            return nil
+
+        }
+    }
+}
