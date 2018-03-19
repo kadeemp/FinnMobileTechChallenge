@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0D2060355E003FA12D /* AppDelegate.swift */; };
-		F4832C102060355E003FA12D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* FirstViewController.swift */; };
-		F4832C122060355E003FA12D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SecondViewController.swift */; };
+		F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* MainFeedViewController.swift */; };
+		F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SavedAdsViewController.swift */; };
 		F4832C152060355E003FA12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4832C132060355E003FA12D /* Main.storyboard */; };
 		F4832C172060355E003FA12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4832C162060355E003FA12D /* Assets.xcassets */; };
 		F4832C1A2060355E003FA12D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4832C182060355E003FA12D /* LaunchScreen.storyboard */; };
 		F4832C252060355E003FA12D /* FinnMobileTechChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C242060355E003FA12D /* FinnMobileTechChallengeTests.swift */; };
 		F4832C302060355E003FA12D /* FinnMobileTechChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C2F2060355E003FA12D /* FinnMobileTechChallengeUITests.swift */; };
+		F4832C422060370B003FA12D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C412060370B003FA12D /* Image.swift */; };
+		F4832C4420603726003FA12D /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C4320603726003FA12D /* Ad.swift */; };
+		F4832C46206037A0003FA12D /* AdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C45206037A0003FA12D /* AdCollectionViewCell.swift */; };
+		F4832C4C20603899003FA12D /* FinnAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C4B20603899003FA12D /* FinnAPI.swift */; };
+		F4832C4E206038A6003FA12D /* NetworkingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C4D206038A6003FA12D /* NetworkingRouter.swift */; };
+		F4832C50206038B9003FA12D /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C4F206038B9003FA12D /* NetworkingProvider.swift */; };
+		F4832C52206038D2003FA12D /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C51206038D2003FA12D /* RouterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +44,8 @@
 /* Begin PBXFileReference section */
 		F4832C0A2060355E003FA12D /* FinnMobileTechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinnMobileTechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C0D2060355E003FA12D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4832C0F2060355E003FA12D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F4832C112060355E003FA12D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F4832C0F2060355E003FA12D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		F4832C112060355E003FA12D /* SavedAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAdsViewController.swift; sourceTree = "<group>"; };
 		F4832C142060355E003FA12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4832C162060355E003FA12D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4832C192060355E003FA12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,13 @@
 		F4832C2B2060355E003FA12D /* FinnMobileTechChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinnMobileTechChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C2F2060355E003FA12D /* FinnMobileTechChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnMobileTechChallengeUITests.swift; sourceTree = "<group>"; };
 		F4832C312060355E003FA12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4832C412060370B003FA12D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F4832C4320603726003FA12D /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		F4832C45206037A0003FA12D /* AdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4832C4B20603899003FA12D /* FinnAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnAPI.swift; sourceTree = "<group>"; };
+		F4832C4D206038A6003FA12D /* NetworkingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRouter.swift; sourceTree = "<group>"; };
+		F4832C4F206038B9003FA12D /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		F4832C51206038D2003FA12D /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +113,10 @@
 		F4832C0C2060355E003FA12D /* FinnMobileTechChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				F4832C0D2060355E003FA12D /* AppDelegate.swift */,
-				F4832C0F2060355E003FA12D /* FirstViewController.swift */,
-				F4832C112060355E003FA12D /* SecondViewController.swift */,
+				F4832C40206036E6003FA12D /* Models */,
+				F4832C3E206036B5003FA12D /* Views */,
+				F4832C3D206036A8003FA12D /* Controllers */,
+				F4832C3F206036CF003FA12D /* Networking */,
 				F4832C132060355E003FA12D /* Main.storyboard */,
 				F4832C162060355E003FA12D /* Assets.xcassets */,
 				F4832C182060355E003FA12D /* LaunchScreen.storyboard */,
@@ -126,6 +141,44 @@
 				F4832C312060355E003FA12D /* Info.plist */,
 			);
 			path = FinnMobileTechChallengeUITests;
+			sourceTree = "<group>";
+		};
+		F4832C3D206036A8003FA12D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4832C112060355E003FA12D /* SavedAdsViewController.swift */,
+				F4832C0D2060355E003FA12D /* AppDelegate.swift */,
+				F4832C0F2060355E003FA12D /* MainFeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F4832C3E206036B5003FA12D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4832C45206037A0003FA12D /* AdCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4832C3F206036CF003FA12D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F4832C4B20603899003FA12D /* FinnAPI.swift */,
+				F4832C4D206038A6003FA12D /* NetworkingRouter.swift */,
+				F4832C4F206038B9003FA12D /* NetworkingProvider.swift */,
+				F4832C51206038D2003FA12D /* RouterProtocol.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F4832C40206036E6003FA12D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4832C412060370B003FA12D /* Image.swift */,
+				F4832C4320603726003FA12D /* Ad.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4832C122060355E003FA12D /* SecondViewController.swift in Sources */,
+				F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */,
+				F4832C4C20603899003FA12D /* FinnAPI.swift in Sources */,
+				F4832C52206038D2003FA12D /* RouterProtocol.swift in Sources */,
+				F4832C4E206038A6003FA12D /* NetworkingRouter.swift in Sources */,
+				F4832C422060370B003FA12D /* Image.swift in Sources */,
 				F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */,
-				F4832C102060355E003FA12D /* FirstViewController.swift in Sources */,
+				F4832C46206037A0003FA12D /* AdCollectionViewCell.swift in Sources */,
+				F4832C4420603726003FA12D /* Ad.swift in Sources */,
+				F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */,
+				F4832C50206038B9003FA12D /* NetworkingProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
