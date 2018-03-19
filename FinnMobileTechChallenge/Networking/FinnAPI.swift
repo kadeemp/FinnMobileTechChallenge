@@ -31,7 +31,6 @@ struct FinnAPI {
     static var adsURL = "https://gist.githubusercontent.com/3lvis/3799feea005ed49942dcb56386ecec2b/raw/63249144485884d279d55f4f3907e37098f55c74/discover.json"
 
 
-
     static var getAds: URL {
         let adURL = URL(string: adsURL)
         do {
