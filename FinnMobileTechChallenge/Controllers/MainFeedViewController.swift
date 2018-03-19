@@ -12,7 +12,7 @@ class MainFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkingProvider.request(router: NetworkingRouter.getAds(), completionHandler: {_ in })
+        adService.loadAds()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -11,16 +11,16 @@ import Alamofire
 
 struct NetworkingProvider {
 
-    typealias RequestCompletion = (((Any?, NSError?)?) -> Void)
+    typealias RequestCompletion = ((Any?, Any?) -> Void)
 
     static func request(router: NetworkingRouter, completionHandler: @escaping (RequestCompletion)) {
-        Alamofire.request(router.baseURL, method: router.method, parameters:router.parameters, headers: router.headers).validate().responseJSON() { response in
+        Alamofire.request(router.baseURL, method: router.method, headers: router.headers).validate().responseJSON() { response in
             DispatchQueue.main.async {
                 switch response.result{
-                case .success:
-                    if let value = response.result.value {
-                        print(value)
-                    }
+                case .success(let value):
+                        //print(value)
+                    return completionHandler(value, response.result.error)
+
                 case .failure:
                     if let error = response.result.error {
                         fatalError("Error retrieving Data")

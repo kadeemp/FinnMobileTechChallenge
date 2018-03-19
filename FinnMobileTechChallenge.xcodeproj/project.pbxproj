@@ -10,6 +10,7 @@
 		6D900D51DF712048EBE19291 /* Pods_FinnMobileTechChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDBD92025E1D19E66720586 /* Pods_FinnMobileTechChallenge.framework */; };
 		A3EDB41D75F9B1F45B645469 /* Pods_FinnMobileTechChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */; };
 		C78DE9BCEAE91616E0A62850 /* Pods_FinnMobileTechChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B915313C661DD7ECB5232FD0 /* Pods_FinnMobileTechChallengeUITests.framework */; };
+		F4159D70206069C400EBF126 /* adService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4159D6F206069C400EBF126 /* adService.swift */; };
 		F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0D2060355E003FA12D /* AppDelegate.swift */; };
 		F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* MainFeedViewController.swift */; };
 		F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SavedAdsViewController.swift */; };
@@ -53,6 +54,7 @@
 		C1473EC57BB2679C8B539516 /* Pods-FinnMobileTechChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallenge/Pods-FinnMobileTechChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinnMobileTechChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66BD31763534525DC668AE5 /* Pods-FinnMobileTechChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F4159D6F206069C400EBF126 /* adService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adService.swift; sourceTree = "<group>"; };
 		F4832C0A2060355E003FA12D /* FinnMobileTechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinnMobileTechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C0D2060355E003FA12D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4832C0F2060355E003FA12D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F4159D6E2060699A00EBF126 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F4159D6F206069C400EBF126 /* adService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F4832C012060355E003FA12D = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		F4832C0C2060355E003FA12D /* FinnMobileTechChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				F4159D6E2060699A00EBF126 /* Services */,
 				F4832C40206036E6003FA12D /* Models */,
 				F4832C3E206036B5003FA12D /* Views */,
 				F4832C3D206036A8003FA12D /* Controllers */,
@@ -519,6 +530,7 @@
 				F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */,
 				F4832C4C20603899003FA12D /* FinnAPI.swift in Sources */,
 				F4832C52206038D2003FA12D /* RouterProtocol.swift in Sources */,
+				F4159D70206069C400EBF126 /* adService.swift in Sources */,
 				F4832C4E206038A6003FA12D /* NetworkingRouter.swift in Sources */,
 				F4832C422060370B003FA12D /* Image.swift in Sources */,
 				F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */,
