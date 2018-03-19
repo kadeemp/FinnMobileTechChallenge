@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D900D51DF712048EBE19291 /* Pods_FinnMobileTechChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDBD92025E1D19E66720586 /* Pods_FinnMobileTechChallenge.framework */; };
+		A3EDB41D75F9B1F45B645469 /* Pods_FinnMobileTechChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */; };
+		C78DE9BCEAE91616E0A62850 /* Pods_FinnMobileTechChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B915313C661DD7ECB5232FD0 /* Pods_FinnMobileTechChallengeUITests.framework */; };
 		F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0D2060355E003FA12D /* AppDelegate.swift */; };
 		F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* MainFeedViewController.swift */; };
 		F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SavedAdsViewController.swift */; };
@@ -42,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FE0A158B2747F560F3783C5 /* Pods-FinnMobileTechChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeUITests/Pods-FinnMobileTechChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		38743ECD1A60E9F55BA4FC96 /* Pods-FinnMobileTechChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallenge/Pods-FinnMobileTechChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		46A417DD7133DFA5F7904DFE /* Pods-FinnMobileTechChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeUITests/Pods-FinnMobileTechChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B51D62BE0FC83F807C8F85FB /* Pods-FinnMobileTechChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B915313C661DD7ECB5232FD0 /* Pods_FinnMobileTechChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinnMobileTechChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1473EC57BB2679C8B539516 /* Pods-FinnMobileTechChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallenge/Pods-FinnMobileTechChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinnMobileTechChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66BD31763534525DC668AE5 /* Pods-FinnMobileTechChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4832C0A2060355E003FA12D /* FinnMobileTechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinnMobileTechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C0D2060355E003FA12D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4832C0F2060355E003FA12D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +74,7 @@
 		F4832C4D206038A6003FA12D /* NetworkingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRouter.swift; sourceTree = "<group>"; };
 		F4832C4F206038B9003FA12D /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		F4832C51206038D2003FA12D /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		FEDBD92025E1D19E66720586 /* Pods_FinnMobileTechChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinnMobileTechChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D900D51DF712048EBE19291 /* Pods_FinnMobileTechChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3EDB41D75F9B1F45B645469 /* Pods_FinnMobileTechChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +98,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78DE9BCEAE91616E0A62850 /* Pods_FinnMobileTechChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5599C6B8552C401675247A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEDBD92025E1D19E66720586 /* Pods_FinnMobileTechChallenge.framework */,
+				C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */,
+				B915313C661DD7ECB5232FD0 /* Pods_FinnMobileTechChallengeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F07C00D26122B2DD9BD1C096 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1473EC57BB2679C8B539516 /* Pods-FinnMobileTechChallenge.debug.xcconfig */,
+				38743ECD1A60E9F55BA4FC96 /* Pods-FinnMobileTechChallenge.release.xcconfig */,
+				B51D62BE0FC83F807C8F85FB /* Pods-FinnMobileTechChallengeTests.debug.xcconfig */,
+				C66BD31763534525DC668AE5 /* Pods-FinnMobileTechChallengeTests.release.xcconfig */,
+				0FE0A158B2747F560F3783C5 /* Pods-FinnMobileTechChallengeUITests.debug.xcconfig */,
+				46A417DD7133DFA5F7904DFE /* Pods-FinnMobileTechChallengeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F4832C012060355E003FA12D = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +135,8 @@
 				F4832C232060355E003FA12D /* FinnMobileTechChallengeTests */,
 				F4832C2E2060355E003FA12D /* FinnMobileTechChallengeUITests */,
 				F4832C0B2060355E003FA12D /* Products */,
+				F07C00D26122B2DD9BD1C096 /* Pods */,
+				A5599C6B8552C401675247A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4832C342060355E003FA12D /* Build configuration list for PBXNativeTarget "FinnMobileTechChallenge" */;
 			buildPhases = (
+				CE5D5E0011022306239420C9 /* [CP] Check Pods Manifest.lock */,
 				F4832C062060355E003FA12D /* Sources */,
 				F4832C072060355E003FA12D /* Frameworks */,
 				F4832C082060355E003FA12D /* Resources */,
+				73262A67B31A8E42E61E0E79 /* [CP] Embed Pods Frameworks */,
+				C9BD03EA4832B50E51062548 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,9 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4832C372060355E003FA12D /* Build configuration list for PBXNativeTarget "FinnMobileTechChallengeTests" */;
 			buildPhases = (
+				A569657D865686EC843677E7 /* [CP] Check Pods Manifest.lock */,
 				F4832C1C2060355E003FA12D /* Sources */,
 				F4832C1D2060355E003FA12D /* Frameworks */,
 				F4832C1E2060355E003FA12D /* Resources */,
+				CE62F886DE80AB9D360E99C9 /* [CP] Embed Pods Frameworks */,
+				4A152240796CE9DFBD33AB27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,9 +269,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4832C3A2060355E003FA12D /* Build configuration list for PBXNativeTarget "FinnMobileTechChallengeUITests" */;
 			buildPhases = (
+				D9A5C2F79314F6AAA18CCA99 /* [CP] Check Pods Manifest.lock */,
 				F4832C272060355E003FA12D /* Sources */,
 				F4832C282060355E003FA12D /* Frameworks */,
 				F4832C292060355E003FA12D /* Resources */,
+				4B7B59640A41A35BB066426D /* [CP] Embed Pods Frameworks */,
+				23BF75AA8D102AFAC902EEC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,6 +358,156 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23BF75AA8D102AFAC902EEC2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallengeUITests/Pods-FinnMobileTechChallengeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A152240796CE9DFBD33AB27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B7B59640A41A35BB066426D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallengeUITests/Pods-FinnMobileTechChallengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73262A67B31A8E42E61E0E79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallenge/Pods-FinnMobileTechChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallenge/Pods-FinnMobileTechChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A569657D865686EC843677E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinnMobileTechChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9BD03EA4832B50E51062548 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallenge/Pods-FinnMobileTechChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE5D5E0011022306239420C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinnMobileTechChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE62F886DE80AB9D360E99C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A5C2F79314F6AAA18CCA99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinnMobileTechChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4832C062060355E003FA12D /* Sources */ = {
@@ -488,6 +687,7 @@
 		};
 		F4832C352060355E003FA12D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1473EC57BB2679C8B539516 /* Pods-FinnMobileTechChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +703,7 @@
 		};
 		F4832C362060355E003FA12D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38743ECD1A60E9F55BA4FC96 /* Pods-FinnMobileTechChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -518,6 +719,7 @@
 		};
 		F4832C382060355E003FA12D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B51D62BE0FC83F807C8F85FB /* Pods-FinnMobileTechChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -535,6 +737,7 @@
 		};
 		F4832C392060355E003FA12D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C66BD31763534525DC668AE5 /* Pods-FinnMobileTechChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -552,6 +755,7 @@
 		};
 		F4832C3B2060355E003FA12D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FE0A158B2747F560F3783C5 /* Pods-FinnMobileTechChallengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -568,6 +772,7 @@
 		};
 		F4832C3C2060355E003FA12D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46A417DD7133DFA5F7904DFE /* Pods-FinnMobileTechChallengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
