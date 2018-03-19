@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Alamofire
+
+protocol RouterProtocol {
+    var baseURL: URL { get }
+    var method: HTTPMethod { get }
+    var headers: HTTPHeaders? { get }
+    var parameters: Parameters? { get }
+}
