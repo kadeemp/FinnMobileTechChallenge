@@ -22,7 +22,7 @@ struct NetworkingProvider {
 
                 case .failure:
                     if let error = response.result.error {
-                        fatalError("Error retrieving Data")
+                        print(error)
                     }
                 }
             }

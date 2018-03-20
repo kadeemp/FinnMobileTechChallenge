@@ -48,14 +48,11 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        //TODO: Adjust Api to do string conversions to URL
-        var imageString = FinnAPI.imageBaseURL + ad.imageURL
-        var imageURL = URL(string:imageString)
+
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
-        cell.adPrice.text = String(ad.price)
-        //print(ad.price)
-        cell.adImage.af_setImage(withURL: imageURL!)
+        cell.adPrice.text = adService.priceChecker(string: ad.price)
+        cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
         return cell
     }
 

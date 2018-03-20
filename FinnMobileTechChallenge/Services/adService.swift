@@ -34,7 +34,6 @@ struct adService {
                     let description = ad[FinnAPI.adKeys.description].stringValue
                     let type = ad[FinnAPI.adKeys.type].stringValue
                     var price = ad[FinnAPI.adKeys.price][FinnAPI.adKeys.priceValue].stringValue
-                    let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price)
                     adObjectArray.append(adObject)
 
                 }
@@ -47,6 +46,16 @@ struct adService {
             print(adObjectArray)
         })
         return adObjectArray
+
+    }
+
+    static func priceChecker(string:String) -> String {
+        if string != "" {
+            var newPrice = string + " kr"
+            return newPrice
+        } else {
+            return string
+        }
 
     }
 
@@ -96,6 +105,14 @@ struct adService {
             }
         })
         return image}
+    
+    static func imageURLConverter(imageUrlPath:String) -> URL {
+        let baseURL = FinnAPI.imageBaseURL
+        let imageUrlString = baseURL + imageUrlPath
+        let imageURL = URL(string:imageUrlString)
+        return imageURL!
+    }
 }
+
 
 

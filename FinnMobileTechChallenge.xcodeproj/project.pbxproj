@@ -12,6 +12,9 @@
 		C78DE9BCEAE91616E0A62850 /* Pods_FinnMobileTechChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B915313C661DD7ECB5232FD0 /* Pods_FinnMobileTechChallengeUITests.framework */; };
 		F4159D70206069C400EBF126 /* adService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4159D6F206069C400EBF126 /* adService.swift */; };
 		F4159D722060BD3F00EBF126 /* JsonAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4159D712060BD3F00EBF126 /* JsonAd.swift */; };
+		F43D90E62060E55F00BDF571 /* 6G@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F43D90E32060E55F00BDF571 /* 6G@2x.png */; };
+		F43D90E72060E55F00BDF571 /* 6G.png in Resources */ = {isa = PBXBuildFile; fileRef = F43D90E42060E55F00BDF571 /* 6G.png */; };
+		F43D90E82060E55F00BDF571 /* 6G@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F43D90E52060E55F00BDF571 /* 6G@3x.png */; };
 		F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0D2060355E003FA12D /* AppDelegate.swift */; };
 		F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* MainFeedViewController.swift */; };
 		F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SavedAdsViewController.swift */; };
@@ -57,6 +60,9 @@
 		C66BD31763534525DC668AE5 /* Pods-FinnMobileTechChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4159D6F206069C400EBF126 /* adService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adService.swift; sourceTree = "<group>"; };
 		F4159D712060BD3F00EBF126 /* JsonAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAd.swift; sourceTree = "<group>"; };
+		F43D90E32060E55F00BDF571 /* 6G@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6G@2x.png"; sourceTree = "<group>"; };
+		F43D90E42060E55F00BDF571 /* 6G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6G.png; sourceTree = "<group>"; };
+		F43D90E52060E55F00BDF571 /* 6G@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6G@3x.png"; sourceTree = "<group>"; };
 		F4832C0A2060355E003FA12D /* FinnMobileTechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinnMobileTechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C0D2060355E003FA12D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4832C0F2060355E003FA12D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +178,9 @@
 				F4832C3F206036CF003FA12D /* Networking */,
 				F4832C132060355E003FA12D /* Main.storyboard */,
 				F4832C162060355E003FA12D /* Assets.xcassets */,
+				F43D90E42060E55F00BDF571 /* 6G.png */,
+				F43D90E32060E55F00BDF571 /* 6G@2x.png */,
+				F43D90E52060E55F00BDF571 /* 6G@3x.png */,
 				F4832C182060355E003FA12D /* LaunchScreen.storyboard */,
 				F4832C1B2060355E003FA12D /* Info.plist */,
 			);
@@ -351,9 +360,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43D90E72060E55F00BDF571 /* 6G.png in Resources */,
 				F4832C1A2060355E003FA12D /* LaunchScreen.storyboard in Resources */,
 				F4832C172060355E003FA12D /* Assets.xcassets in Resources */,
 				F4832C152060355E003FA12D /* Main.storyboard in Resources */,
+				F43D90E82060E55F00BDF571 /* 6G@3x.png in Resources */,
+				F43D90E62060E55F00BDF571 /* 6G@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
