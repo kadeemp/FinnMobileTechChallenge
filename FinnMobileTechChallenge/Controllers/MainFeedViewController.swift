@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AlamofireImage
 
 class MainFeedViewController: UIViewController {
 
@@ -48,11 +48,12 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        let image = adService.loadImage(imageURL: ad.imageURL)
+        var imageString = FinnAPI.imageBaseURL + ad.imageURL
+        var imageURL = URL(string:imageString)
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = String(ad.price)
-        cell.adImage.image = image
+        cell.adImage.af_setImage(withURL: imageURL!)
         return cell
     }
 
