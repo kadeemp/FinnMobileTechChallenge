@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MainFeedViewController: UIViewController {
 
 
@@ -47,10 +48,11 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
+        let image = adService.loadImage(imageURL: ad.imageURL)
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = String(ad.price)
-        cell.adImage.image = 
+        cell.adImage.image = image
         return cell
     }
 
