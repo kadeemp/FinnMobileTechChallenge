@@ -7,6 +7,7 @@ target 'FinnMobileTechChallenge' do
 
 	pod 'Alamofire', '~> 4.7'
 	pod 'SwiftyJSON'
+	pod "PromiseKit", "~> 6.0"
 
   # Pods for FinnMobileTechChallenge
 

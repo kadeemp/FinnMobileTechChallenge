@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BD57FD5B14F9591B8FDC5E5205F7AE28"
+               BlueprintIdentifier = "B22DEF31A0AA5F8FDC4A9AB17084FA1B"
                BuildableName = "Pods_FinnMobileTechChallenge.framework"
                BlueprintName = "Pods-FinnMobileTechChallenge"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BD57FD5B14F9591B8FDC5E5205F7AE28"
+            BlueprintIdentifier = "B22DEF31A0AA5F8FDC4A9AB17084FA1B"
             BuildableName = "Pods_FinnMobileTechChallenge.framework"
             BlueprintName = "Pods-FinnMobileTechChallenge"
             ReferencedContainer = "container:Pods.xcodeproj">
