@@ -20,15 +20,15 @@ class MainFeedViewController: UIViewController {
 
 }
 
-    // MARK: - View LifeCycle
+// MARK: - View LifeCycle
 extension MainFeedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
-        ads = adService.loadAds(completion: {
-            allAds in
-            self.ads = allAds
-        })
-        print(ads)
+        _ = adService.loadAds { [weak self] allAds in
+            guard let strongSelf = self else { return }
+            strongSelf.ads = allAds
+            strongSelf.adCollectionView.reloadData()
+        }
     }
 
     override func viewDidLoad() {
@@ -50,6 +50,7 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = String(ad.price)
+        cell.adImage.image = 
         return cell
     }
 
