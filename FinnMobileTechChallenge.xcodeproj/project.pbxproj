@@ -11,6 +11,7 @@
 		A3EDB41D75F9B1F45B645469 /* Pods_FinnMobileTechChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */; };
 		C78DE9BCEAE91616E0A62850 /* Pods_FinnMobileTechChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B915313C661DD7ECB5232FD0 /* Pods_FinnMobileTechChallengeUITests.framework */; };
 		F4159D70206069C400EBF126 /* adService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4159D6F206069C400EBF126 /* adService.swift */; };
+		F4159D722060BD3F00EBF126 /* JsonAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4159D712060BD3F00EBF126 /* JsonAd.swift */; };
 		F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0D2060355E003FA12D /* AppDelegate.swift */; };
 		F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* MainFeedViewController.swift */; };
 		F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SavedAdsViewController.swift */; };
@@ -55,6 +56,7 @@
 		C4553CB4DE82E61EACE8A6A6 /* Pods_FinnMobileTechChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinnMobileTechChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66BD31763534525DC668AE5 /* Pods-FinnMobileTechChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinnMobileTechChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinnMobileTechChallengeTests/Pods-FinnMobileTechChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		F4159D6F206069C400EBF126 /* adService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adService.swift; sourceTree = "<group>"; };
+		F4159D712060BD3F00EBF126 /* JsonAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAd.swift; sourceTree = "<group>"; };
 		F4832C0A2060355E003FA12D /* FinnMobileTechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinnMobileTechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C0D2060355E003FA12D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4832C0F2060355E003FA12D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				F4832C412060370B003FA12D /* Image.swift */,
 				F4832C4320603726003FA12D /* Ad.swift */,
+				F4159D712060BD3F00EBF126 /* JsonAd.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			files = (
 				F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */,
 				F4832C4C20603899003FA12D /* FinnAPI.swift in Sources */,
+				F4159D722060BD3F00EBF126 /* JsonAd.swift in Sources */,
 				F4832C52206038D2003FA12D /* RouterProtocol.swift in Sources */,
 				F4159D70206069C400EBF126 /* adService.swift in Sources */,
 				F4832C4E206038A6003FA12D /* NetworkingRouter.swift in Sources */,

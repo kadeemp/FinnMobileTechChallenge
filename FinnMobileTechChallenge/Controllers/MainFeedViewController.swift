@@ -17,10 +17,6 @@ class MainFeedViewController: UIViewController {
 
     // MARK: - IB Outlets
     @IBOutlet weak var adCollectionView: UICollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 
 }
 
@@ -28,8 +24,16 @@ class MainFeedViewController: UIViewController {
 extension MainFeedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
-        ads = adService.loadAds()
+        ads = adService.loadAds(completion: {
+            allAds in
+            self.ads = allAds
+        })
         print(ads)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
     }
 }
 
