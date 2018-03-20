@@ -72,7 +72,7 @@ struct adService {
         let coreData = CoreData()
         
         let imageData = UIImageJPEGRepresentation(image, 1)
-        
+
         var advertisement:NSManagedObject?
         advertisement?.setValue(ad.location, forKey: "location")
         advertisement?.setValue(ad.score, forKey: "score")

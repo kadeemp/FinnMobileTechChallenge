@@ -56,6 +56,11 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
         cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let ad = ads[indexPath.row]
+        let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
+     //image from cell returns nil. so far can't save from here
+    }
 }
 
 
