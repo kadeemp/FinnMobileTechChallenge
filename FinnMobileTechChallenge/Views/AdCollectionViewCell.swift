@@ -10,4 +10,8 @@ import UIKit
 
 class AdCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var adImage: UIImageView!
+    @IBOutlet weak var adDescription: UILabel!
+    @IBOutlet weak var adLocation: UILabel!
+    @IBOutlet weak var adPrice: UILabel!
 }

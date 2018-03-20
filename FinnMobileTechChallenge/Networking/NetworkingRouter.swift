@@ -12,14 +12,15 @@ import Alamofire
 enum NetworkingRouter: RouterProtocol {
 
     case getAds()
-    case getImages(path:URL)
+    case getImages(path:String)
 
     public var baseURL: URL {
         switch self {
         case .getAds:
             return FinnAPI.getAds
         case .getImages(let path):
-            return FinnAPI.getImages 
+            let url = String(describing: FinnAPI.getImages) + path
+            return URL(string: url)!
 
         }
     }

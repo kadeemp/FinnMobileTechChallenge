@@ -23,6 +23,7 @@ class Ad {
     var price:Int
 
     init(location:String, score:Double, id:Int, imageURL:String,adType:String, description:String, type:String, price:Int ) {
+        //TODO: update model so that json parses when initiated
 //        guard let location = json[FinnAPI.adKeys.location].string,
 //            let score = json[FinnAPI.adKeys.score].double,
 //            let id = json[FinnAPI.adKeys.id].int,

@@ -18,7 +18,6 @@ struct NetworkingProvider {
             DispatchQueue.main.async {
                 switch response.result{
                 case .success(let value):
-                        //print(value)
                     return completionHandler(value, response.result.error)
 
                 case .failure:
