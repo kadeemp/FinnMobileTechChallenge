@@ -48,5 +48,17 @@ struct FinnAPI {
             fatalError("Error creating Ad JSON URL")
         }
     }
+    struct adKeys{
+        static let location = "location"
+        static let score = "score"
+        static let id = "id"
+        static let image = "image"
+        static let adType = "adType"
+        static let description = "description"
+        static let type = "type"
+        static let price = "price"
+        static let imageURL = "url"
+
+    }
 }
 

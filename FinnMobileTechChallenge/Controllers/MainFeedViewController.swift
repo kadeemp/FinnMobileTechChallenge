@@ -12,10 +12,12 @@ class MainFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        adService.loadAds()
+
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        adService.loadAds()
+    }
 
 
 }
