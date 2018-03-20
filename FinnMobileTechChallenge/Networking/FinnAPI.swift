@@ -59,6 +59,7 @@ struct FinnAPI {
         static let description = "description"
         static let type = "type"
         static let price = "price"
+        static let priceValue = "value"
         static let imageURL = "url"
 
     }

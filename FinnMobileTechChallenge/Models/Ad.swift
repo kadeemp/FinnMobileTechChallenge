@@ -20,9 +20,8 @@ class Ad {
     var description:String
     var type:String
     //TODO: Double check if this should be a Double
-    var price:Int
-
-    init(location:String, score:Double, id:Int, imageURL:String,adType:String, description:String, type:String, price:Int ) {
+    var price:String
+    init(location:String, score:Double, id:Int, imageURL:String,adType:String, description:String, type:String, price:String ) {
         //TODO: update model so that json parses when initiated
 //        guard let location = json[FinnAPI.adKeys.location].string,
 //            let score = json[FinnAPI.adKeys.score].double,

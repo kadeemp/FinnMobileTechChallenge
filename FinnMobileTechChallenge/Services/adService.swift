@@ -25,7 +25,6 @@ struct adService {
                 //TODO: Change ad model init to parse data from there
                 // let ads = adArray.flatMap{Ad($0)}
 
-
                 for ad in jsonAdArray {
                     let location = ad[FinnAPI.adKeys.location].stringValue
                     let score = ad[FinnAPI.adKeys.score].doubleValue
@@ -34,7 +33,7 @@ struct adService {
                     let adType = ad[FinnAPI.adKeys.adType].stringValue
                     let description = ad[FinnAPI.adKeys.description].stringValue
                     let type = ad[FinnAPI.adKeys.type].stringValue
-                    let price = ad[FinnAPI.adKeys.price].intValue
+                    var price = ad[FinnAPI.adKeys.price][FinnAPI.adKeys.priceValue].stringValue
                     let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price)
                     adObjectArray.append(adObject)
 
@@ -51,41 +50,41 @@ struct adService {
 
     }
 
-    static func loadAdsWithPromise() -> Promise<[Ad]> {
-        return Promise{ fulfill  in
-            NetworkingProvider.request(router: NetworkingRouter.getAds(), completionHandler: {(data, err) in
-                let initQueue = DispatchQueue(label:"create_ad_object", qos: .userInitiated)
-                initQueue.async {
-                    let json = JSON(data!)
-                    let jsonAdArray = json["items"].arrayValue
-                    var adObjectArray:[Ad] = []
-
-                    //TODO: Change ad model init to parse data from there
-                    // let ads = adArray.flatMap{Ad($0)}
-
-
-                    for ad in jsonAdArray {
-                        let location = ad[FinnAPI.adKeys.location].stringValue
-                        let score = ad[FinnAPI.adKeys.score].doubleValue
-                        let id = ad[FinnAPI.adKeys.id].intValue
-                        let imageURL = ad[FinnAPI.adKeys.image][FinnAPI.adKeys.imageURL].stringValue
-                        let adType = ad[FinnAPI.adKeys.adType].stringValue
-                        let description = ad[FinnAPI.adKeys.description].stringValue
-                        let type = ad[FinnAPI.adKeys.type].stringValue
-                        let price = ad[FinnAPI.adKeys.price].intValue
-                        let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price)
-                        //adObjectArray.append(adObject)
-
-                    }
-                    DispatchQueue.main.async {
-
-                        //fulfill(adObjectArray)
-                    }
-
-                }
-        })
-    }
-    }
+//    static func loadAdsWithPromise() -> Promise<[Ad]> {
+//        return Promise{ fulfill  in
+//            NetworkingProvider.request(router: NetworkingRouter.getAds(), completionHandler: {(data, err) in
+//                let initQueue = DispatchQueue(label:"create_ad_object", qos: .userInitiated)
+//                initQueue.async {
+//                    let json = JSON(data!)
+//                    let jsonAdArray = json["items"].arrayValue
+//                    var adObjectArray:[Ad] = []
+//
+//                    //TODO: Change ad model init to parse data from there
+//                    // let ads = adArray.flatMap{Ad($0)}
+//
+//
+//                    for ad in jsonAdArray {
+//                        let location = ad[FinnAPI.adKeys.location].stringValue
+//                        let score = ad[FinnAPI.adKeys.score].doubleValue
+//                        let id = ad[FinnAPI.adKeys.id].intValue
+//                        let imageURL = ad[FinnAPI.adKeys.image][FinnAPI.adKeys.imageURL].stringValue
+//                        let adType = ad[FinnAPI.adKeys.adType].stringValue
+//                        let description = ad[FinnAPI.adKeys.description].stringValue
+//                        let type = ad[FinnAPI.adKeys.type].stringValue
+//                        let price = ad[FinnAPI.adKeys.price].intValue
+//                        let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price)
+//                        //adObjectArray.append(adObject)
+//
+//                    }
+//                    DispatchQueue.main.async {
+//
+//                        //fulfill(adObjectArray)
+//                    }
+//
+//                }
+//        })
+//    }
+//    }
     static func loadImage(imageURL:String) -> UIImage {
 
         var image = UIImage()
