@@ -11,22 +11,6 @@ import Alamofire
 
 struct FinnAPI {
 
-//    static var imagesBaseURLComponent: URLComponents {
-//        var baseUrl = URLComponents()
-//        baseUrl.scheme = "https"
-//        baseUrl.host = "images.finncdn.no"
-//        baseUrl.path = "/dynamic/default/"
-//        return baseUrl
-//    }
-//
-//    static var adsBaseURLComponent: URLComponents {
-//        var baseUrl = URLComponents()
-//        baseUrl.scheme = "https"
-//        baseUrl.host = "gist.githubusercontent.com"
-//        baseUrl.path = "3lvis/3799feea005ed49942dcb56386ecec2b/raw/63249144485884d279d55f4f3907e37098f55c74/discover.json"
-//        return baseUrl
-//    }
-
     static var imageBaseURL = "https://images.finncdn.no/dynamic/default/"
 
     static var adsURL = "https://gist.githubusercontent.com/3lvis/3799feea005ed49942dcb56386ecec2b/raw/63249144485884d279d55f4f3907e37098f55c74/discover.json"
@@ -40,7 +24,8 @@ struct FinnAPI {
             fatalError("Error creating Ad JSON URL")
         }
     }
-    //TODO: Adjust so that adservice doesnt have to create its own URL
+    //TODO: Adjust so that adservice doesn't have to create its own URL
+
     static var getImages: URL {
         let imageURL = URL(string:imageBaseURL)
         do {

@@ -9,17 +9,43 @@
 import UIKit
 
 class SavedAdsViewController: UIViewController {
+    
+    // MARK: - Instance Variables
+    fileprivate let cellIdentifier = "adCell"
+    private var ads = [Ad]()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    // MARK: - IB Outlets
+    @IBOutlet weak var adCollectionView: UICollectionView!
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
+// MARK: - View LifeCycle
+extension SavedAdsViewController {
+
+    override func viewWillAppear(_ animated: Bool) {
+        //TODO: Request saved ads from core data through adService
+        }
+    }
+
+// MARK: - CollectionViewDelegate
+
+extension SavedAdsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ads.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let ad = ads[indexPath.row]
+        let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
+
+        cell.adDescription.text = ad.description
+        cell.adLocation.text = ad.location
+        cell.adPrice.text = adService.priceChecker(string: ad.price)
+        cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
+        return cell
+    }
+}
+
+
 

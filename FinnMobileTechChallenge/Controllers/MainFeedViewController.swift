@@ -31,15 +31,9 @@ extension MainFeedViewController {
             strongSelf.adCollectionView.reloadData()
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 }
 
-
-
+// MARK: - CollectionViewDelegate
 extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ads.count
@@ -55,8 +49,10 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
         cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
         return cell
     }
-
-
-
 }
+
+
+
+
+
 

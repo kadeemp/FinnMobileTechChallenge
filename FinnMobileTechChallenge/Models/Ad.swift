@@ -14,25 +14,16 @@ class Ad {
     var location:String
     var score:Double
     var id:Int
-    //TODO: Double check if this is the correct format
     var imageURL:String
     var adType:String
     var description:String
     var type:String
-    //TODO: Double check if this should be a Double
+
+    //Since purchases won't be made in the case of this app, it is best to keep it as a String since making it an int or double would return a zero instead of a blank in the collectionView
     var price:String
     init(location:String, score:Double, id:Int, imageURL:String,adType:String, description:String, type:String, price:String ) {
         //TODO: update model so that json parses when initiated
-//        guard let location = json[FinnAPI.adKeys.location].string,
-//            let score = json[FinnAPI.adKeys.score].double,
-//            let id = json[FinnAPI.adKeys.id].int,
-//            let imageURL = json[FinnAPI.adKeys.image][FinnAPI.adKeys.imageURL].string,
-//            let adType = json[FinnAPI.adKeys.adType].string,
-//            let description = json[FinnAPI.adKeys.description].string,
-//            let type = json[FinnAPI.adKeys.type].string,
-//            let price = json[FinnAPI.adKeys.price].int
-//            else { return nil }
-
+        //TODO: update model so that it keeps track of if the object has been saved or not
         self.location = location
         self.score = score
         self.id = id

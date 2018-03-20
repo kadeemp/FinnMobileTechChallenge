@@ -18,6 +18,7 @@ enum NetworkingRouter: RouterProtocol {
         switch self {
         case .getAds:
             return FinnAPI.getAds
+            
         case .getImages(let path):
             let url = String(describing: FinnAPI.getImages) + path
             return URL(string: url)!

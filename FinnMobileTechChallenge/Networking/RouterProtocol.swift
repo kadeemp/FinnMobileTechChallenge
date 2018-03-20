@@ -12,5 +12,4 @@ import Alamofire
 protocol RouterProtocol {
     var baseURL: URL { get }
     var method: HTTPMethod { get }
-
 }
