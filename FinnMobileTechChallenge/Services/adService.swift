@@ -45,7 +45,7 @@ struct adService {
         })
         return adObjectArray
     }
-
+    
     //TODO: - Add Function that loads all ads from CoreData w/completion
     //TODO: - Add Function that deletes a specific ad from Core Data
     

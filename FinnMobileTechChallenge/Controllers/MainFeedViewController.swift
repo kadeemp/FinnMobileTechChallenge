@@ -18,18 +18,25 @@ class MainFeedViewController: UIViewController {
 
     // MARK: - IB Outlets
     @IBOutlet weak var adCollectionView: UICollectionView!
+    @IBOutlet weak var savedAdsToggleButton: UIBarButtonItem!
+    // MARK: - IB Actions
 
+    @IBAction func toggleMainFeed(_ sender: Any) {
+    }
 }
 
 // MARK: - View LifeCycle
 extension MainFeedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
+        self.title = "Oppdage"
+
         _ = adService.loadAds { [weak self] allAds in
             guard let strongSelf = self else { return }
             strongSelf.ads = allAds
             strongSelf.adCollectionView.reloadData()
         }
+
     }
 }
 
