@@ -34,7 +34,8 @@ struct adService {
                     let description = ad[FinnAPI.adKeys.description].stringValue
                     let type = ad[FinnAPI.adKeys.type].stringValue
                     var price = ad[FinnAPI.adKeys.price][FinnAPI.adKeys.priceValue].stringValue
-                    let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price)
+                    var saved:Bool = false
+                    let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price, saved:saved)
                     
                     adObjectArray.append(adObject)
                 }

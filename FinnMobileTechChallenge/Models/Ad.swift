@@ -21,7 +21,8 @@ class Ad {
 
     //Since purchases won't be made in the case of this app, it is best to keep it as a String since making it an int or double would return a zero instead of a blank in the collectionView
     var price:String
-    init(location:String, score:Double, id:Int, imageURL:String,adType:String, description:String, type:String, price:String ) {
+    var saved:Bool
+    init(location:String, score:Double, id:Int, imageURL:String,adType:String, description:String, type:String, price:String, saved:Bool ) {
         //TODO: update init so that json parses when initiated
         //TODO: update model so that it keeps track of if the object has been saved or not
         self.location = location
@@ -32,6 +33,7 @@ class Ad {
         self.description = description
         self.type = type
         self.price = price
+        self.saved = saved
 
     }
 
