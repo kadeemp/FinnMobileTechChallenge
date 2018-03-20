@@ -165,10 +165,10 @@
 		F4832C0C2060355E003FA12D /* FinnMobileTechChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				F4159D6E2060699A00EBF126 /* Services */,
 				F4832C40206036E6003FA12D /* Models */,
 				F4832C3E206036B5003FA12D /* Views */,
 				F4832C3D206036A8003FA12D /* Controllers */,
+				F4159D6E2060699A00EBF126 /* Services */,
 				F4832C3F206036CF003FA12D /* Networking */,
 				F4832C132060355E003FA12D /* Main.storyboard */,
 				F4832C162060355E003FA12D /* Assets.xcassets */,
@@ -199,9 +199,9 @@
 		F4832C3D206036A8003FA12D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4832C0F2060355E003FA12D /* MainFeedViewController.swift */,
 				F4832C112060355E003FA12D /* SavedAdsViewController.swift */,
 				F4832C0D2060355E003FA12D /* AppDelegate.swift */,
-				F4832C0F2060355E003FA12D /* MainFeedViewController.swift */,
 				F43D90FB2060FDD300BDF571 /* CoreData.swift */,
 			);
 			path = Controllers;
