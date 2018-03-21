@@ -67,6 +67,42 @@ struct adService {
         let imageURL = URL(string:imageUrlString)
         return imageURL!
     }
+    static func isSavedButtonToogle(saved:Bool) -> UIImage {
+        var image = UIImage()
+        if saved == true {
+            image = UIImage(named:"redHeart.png")!
+            return image
+        }
+        else {
+            image = UIImage(named:"whiteHeart.png")!
+            return image
+        }
+    }
+    static func isSaved(saved:Bool) -> Bool {
+        var result = Bool()
+        if saved == true {
+            result = false
+            return result
+        }
+        else {
+            result = true
+            return result
+        }
+    }
+    static func savedAdImageToggle(image:UIImage) -> UIImage {
+        if  image == UIImage(named:"whiteHeart.png") {
+            // adService.saveAd(ad: <#T##Ad#>, image: <#T##UIImage#>)
+            let newImage = UIImage(named:"redHeart.png")
+            return newImage!
+
+        }
+        else if image == UIImage(named:"whiteHeart.png") {
+            //adService.deleteAd(ad: Ad)
+            let newImage = UIImage(named:"redHeart.png")
+            return newImage!
+        }
+        return image
+    }
     
     static func saveAd(ad:Ad, image:UIImage) {
         let coreData = CoreData()

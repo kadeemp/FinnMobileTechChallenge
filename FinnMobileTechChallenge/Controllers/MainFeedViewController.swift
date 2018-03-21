@@ -19,9 +19,11 @@ class MainFeedViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet weak var adCollectionView: UICollectionView!
     @IBOutlet weak var savedAdsToggleButton: UIBarButtonItem!
+    
     // MARK: - IB Actions
 
     @IBAction func toggleMainFeed(_ sender: Any) {
+
     }
 }
 
@@ -49,17 +51,21 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-
+        let saveButtonImage = adService.isSavedButtonToogle(saved: ad.saved)
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = adService.priceChecker(string: ad.price)
         cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
+        cell.saveButton.setImage(saveButtonImage, for: .normal)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-     //image from cell returns nil. so far can't save from here
+        ad.saved = adService.isSaved(saved: ad.saved)
+
+
+        adCollectionView.reloadData()
     }
 }
 
