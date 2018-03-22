@@ -28,14 +28,16 @@ class MainFeedViewController: UIViewController {
 
         if adsToggled == false {
             adsHolder = ads
-            ads = savedAds
+            ads = CoreData.loadAds()
             adsToggled = true
             adCollectionView.reloadData()
+            self.title = "Lagrede Annonser"
         }
         else if adsToggled == true {
             ads = adsHolder
             adsToggled = false
             adCollectionView.reloadData()
+            self.title = "Funksjoner Annonser"
 
         }
             }
@@ -45,7 +47,7 @@ class MainFeedViewController: UIViewController {
 extension MainFeedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "Oppdage"
+
 
         savedAds = CoreData.loadAds()
         _ = adService.loadAds { [weak self] allAds in

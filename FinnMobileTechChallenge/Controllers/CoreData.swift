@@ -11,6 +11,8 @@ import CoreData
 import AlamofireImage
 
 class CoreData {
+    
+    //TODO: Create function to find Ads based on different predicates
 
     // MARK: - Core Data container setup
     lazy var persistentContainer: NSPersistentContainer = {
@@ -47,11 +49,7 @@ class CoreData {
 
             let entity = NSEntityDescription.entity(forEntityName: "Advertisement", in: (context))
             let advertisement = NSManagedObject(entity: entity!, insertInto: context)
-
-
             let imageData = UIImageJPEGRepresentation(image, 1) as! NSData
-            print(type(of: imageData))
-
 
             advertisement.setValue(ad.location, forKey: "location")
             advertisement.setValue(ad.score, forKey: "score")
@@ -67,41 +65,10 @@ class CoreData {
         })
     }
 
-    static func loadAds() -> [Ad]{
 
-        let coreData = CoreData()
-        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
-        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
-        var adsArray = [Ad]()
-
-
-        do {
-            var results = try context.fetch(request)
-            for result in results {
-                let title = result.title!
-                let id = result.id
-                let imageData = result.imageData! as! NSData
-                let type = result.type!
-                let location = result.location!
-                let score = result.score
-                let price = result.price!
-                let saved = result.savedState
-                let imageURL = result.imageURL
-
-                let savedAd = Ad(location: location, score: score, id: Int(id), imageURL:(imageURL)!, adType: type, description: title, type: type, price: price, saved: saved, imageData: imageData)
-                adsArray.append(savedAd)
-
-            }
-
-
-        }
-        catch {
-            fatalError()
-        }
-        return adsArray
-    }
 
     // MARK: - Core Data Deletion Support
+
     static func deleteAd(title:String) {
         let coreData = CoreData()
         let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
@@ -110,7 +77,7 @@ class CoreData {
             request.predicate = NSPredicate(format: "title == %@", title)
             let fetchedResults = try context.fetch(request) as! [Advertisement]
             let result = fetchedResults.first
-            print(result?.title!)
+
             context.delete(result!)
             try context.save()
         }
@@ -135,6 +102,49 @@ class CoreData {
         }
 
     }
+    // MARK: - Core Data Loading Support
+    static func loadAds() -> [Ad]{
+
+        let coreData = CoreData()
+        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
+        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
+        var adsArray = [Ad]()
+
+
+        do {
+            var results = try context.fetch(request)
+            for result in results {
+                let title = result.title!
+                let id = result.id
+                let imageData = result.imageData! as! NSData
+                let type = result.type!
+                let location = result.location!
+                let score = result.score
+                let price = result.price!
+                let saved = result.savedState
+                let imageURL = result.imageURL
+
+                let savedAd = Ad(location: location,
+                                 score: score,
+                                 id: Int(id),
+                                 imageURL:(imageURL)!,
+                                 adType: type,
+                                 description: title,
+                                 type: type,
+                                 price: price,
+                                 saved: saved,
+                                 imageData: imageData)
+                adsArray.append(savedAd)
+
+            }
+
+
+        }
+        catch {
+            fatalError()
+        }
+        return adsArray
+    }
     //This function will be used to compare saved titles to loaded titles
     static func loadAdTitles() -> [String] {
 
@@ -149,7 +159,6 @@ class CoreData {
                 let title = result.title!
                 adTitles.append(title)
             }
-            print(adTitles)
             return adTitles
         }
         catch {
