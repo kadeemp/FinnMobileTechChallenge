@@ -44,6 +44,7 @@ class CoreData {
     }
     static func saveAd(ad:Ad) {
         let coreData = CoreData()
+
         let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
         adService.downloadAdImage(ad: ad, imageUrlString: (FinnAPI.imageBaseURL + ad.imageURL), completion: {image in
 
@@ -64,9 +65,7 @@ class CoreData {
             coreData.saveContext()
         })
     }
-
-
-
+    
     // MARK: - Core Data Deletion Support
 
     static func deleteAd(title:String) {
@@ -165,18 +164,5 @@ class CoreData {
             fatalError()
         }
         return adTitles
-    }
-    static func viewCoreData() {
-
-        let coreData = CoreData()
-        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
-        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
-        do {
-            var results = try context.fetch(request)
-            print(results)
-        }
-        catch {
-            fatalError()
-        }
     }
 }

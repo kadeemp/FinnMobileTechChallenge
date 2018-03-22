@@ -40,7 +40,7 @@ class MainFeedViewController: UIViewController {
             self.title = "Funksjoner Annonser"
 
         }
-            }
+    }
 }
 
 // MARK: - View LifeCycle
@@ -48,7 +48,7 @@ extension MainFeedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
 
-
+        self.title = "Funksjoner Annonser"
         savedAds = CoreData.loadAds()
         _ = adService.loadAds { [weak self] allAds in
             guard let strongSelf = self else { return }
