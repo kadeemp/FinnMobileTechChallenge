@@ -25,7 +25,7 @@ extension SavedAdsViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //TODO: Request saved ads from core data through adService
-        ads = adService.loadKeys()
+        ads = CoreData.loadAds()
         self.adCollectionView.reloadData()
     }
 }
@@ -40,7 +40,7 @@ extension SavedAdsViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        let saveButtonImage = adService.isSavedButtonToogle(saved: ad.saved)
+        let saveButtonImage = adService.saveButtonToggle(saved: ad.saved)
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = adService.priceChecker(string: ad.price)

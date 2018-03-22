@@ -13,16 +13,6 @@ class AdCollectionViewCell: UICollectionViewCell {
     
     @IBAction func saveAdPressed(_ sender:UIButton) {
         
-//        let currentImage = saveButton.currentImage
-//        if  currentImage == UIImage(named:"whiteHeart.png") {
-//            // adService.saveAd(ad: <#T##Ad#>, image: <#T##UIImage#>)
-//            sender.setImage(UIImage(named:"redHeart.png"), for: .normal)
-//        }
-//        else {
-//            //adService.deleteAd(ad: Ad)
-//            sender.setImage(UIImage(named:"whiteHeart.png"), for: .normal)
-//        }
-
     }
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var adImage: UIImageView!

@@ -24,7 +24,6 @@ class MainFeedViewController: UIViewController {
     @IBOutlet weak var savedAdsToggleButton: UIBarButtonItem!
     
     // MARK: - IB Actions
-
     @IBAction func toggleMainFeed(_ sender: Any) {
 
         if adsToggled == false {
@@ -47,18 +46,22 @@ extension MainFeedViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Oppdage"
-        savedAds = adService.loadKeys()
+
+        savedAds = CoreData.loadAds()
         _ = adService.loadAds { [weak self] allAds in
             guard let strongSelf = self else { return }
             strongSelf.ads = allAds
+            adService.adChecker(ads: strongSelf.ads, titles: CoreData.loadAdTitles())
             strongSelf.adCollectionView.reloadData()
         }
+        loadSavedAds()
 
     }
 }
 
 // MARK: - CollectionViewDelegate
 extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ads.count
     }
@@ -66,38 +69,46 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        let saveButtonImage = adService.isSavedButtonToogle(saved: ad.saved)
+        let saveButtonImage = adService.saveButtonToggle(saved: ad.saved)
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = adService.priceChecker(string: ad.price)
         if ad.imageData == nil {
             cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
-        }
-        else {
+        } else {
             cell.adImage.image = UIImage(data: ad.imageData! as Data)
         }
-
         cell.saveButton.setImage(saveButtonImage, for: .normal)
         return cell
     }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ad = ads[indexPath.row]
-        if ad.imageData == nil {
-            adService.downloadAdImage(ad: ad, imageUrlString: (FinnAPI.imageBaseURL + ad.imageURL), completion: {
-                image in
-                let imageData = UIImageJPEGRepresentation(image, 1) as! NSData
-                ad.imageData = imageData
-             //   print(ad.imageData!)
-            })
-        }
-     //   print(ad.imageData)
-        let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        ad.saved = adService.toggleSave(saved: ad.saved, ad:ad, index:indexPath.row)
+        loadImageData(ad: ad)
+        ad.saved = adService.toggleSave(ad:ad)
         adCollectionView.reloadData()
 
     }
 }
+extension MainFeedViewController {
 
+    func loadImageData(ad:Ad) {
+        if ad.imageData == nil {
+            adService.downloadAdImage(ad: ad, imageUrlString: (FinnAPI.imageBaseURL + ad.imageURL), completion: { image in
+                let imageData = UIImageJPEGRepresentation(image, 1)! as NSData
+                ad.imageData = imageData
+            })
+        }
+    }
+    
+    func loadSavedAds() {
+        if ads.count == 0 {
+            ads = savedAds
+            adCollectionView.reloadData()
+
+        }
+    }
+}
 
 
 
