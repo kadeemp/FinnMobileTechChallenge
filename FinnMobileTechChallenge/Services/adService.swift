@@ -9,10 +9,13 @@
 import Foundation
 import SwiftyJSON
 import CoreData
+import AlamofireImage
+import Alamofire
 
 struct adService {
     
     typealias ReturnAdsCompletion = (([Ad]) -> Void)
+    typealias ReturnImageCompletion = ((UIImage) -> Void)
     
     static func loadAds(completion: @escaping ReturnAdsCompletion) -> [Ad] {
         var adObjectArray: [Ad] = []
@@ -78,13 +81,15 @@ struct adService {
             return image
         }
     }
-    static func isSaved(saved:Bool) -> Bool {
+    static func toggleSave(saved:Bool, ad:Ad, index:Int) -> Bool {
         var result = Bool()
         if saved == true {
+            adService.deleteAd(index: index)
             result = false
             return result
         }
         else {
+            adService.saveAd(ad: ad)
             result = true
             return result
         }
@@ -103,22 +108,122 @@ struct adService {
         }
         return image
     }
-    
-    static func saveAd(ad:Ad, image:UIImage) {
-        let coreData = CoreData()
-        
-        let imageData = UIImageJPEGRepresentation(image, 1)
+    static func downloadAdImage(ad:Ad, imageUrlString:String, completion: @escaping ReturnImageCompletion) {
+        let url = adService.imageURLConverter(imageUrlPath: ad.imageURL)
+        Alamofire.request(url).responseImage { response in
 
-        var advertisement:NSManagedObject?
-        advertisement?.setValue(ad.location, forKey: "location")
-        advertisement?.setValue(ad.score, forKey: "score")
-        advertisement?.setValue(ad.id, forKey: "id")
-        advertisement?.setValue(imageData, forKey: "imageData")
-        advertisement?.setValue(ad.adType, forKey: "adType")
-        advertisement?.setValue(ad.description, forKey: "type")
-        advertisement?.setValue(ad.price, forKey: "price")
+            if let image = response.result.value {
+                completion(image)
+            }
+
+        }
+    }
+    
+    static func saveAd(ad:Ad) {
+        let coreData = CoreData()
+        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
+        adService.downloadAdImage(ad: ad, imageUrlString: (FinnAPI.imageBaseURL + ad.imageURL), completion: {image in
+
+            let entity = NSEntityDescription.entity(forEntityName: "Advertisement", in: (context))
+            let advertisement = NSManagedObject(entity: entity!, insertInto: context)
+
+        
+        let imageData = UIImageJPEGRepresentation(image, 1) as! NSData
+            print(type(of: imageData))
+
+
+        advertisement.setValue(ad.location, forKey: "location")
+        advertisement.setValue(ad.score, forKey: "score")
+        advertisement.setValue(ad.id, forKey: "id")
+        advertisement.setValue(imageData, forKey: "imagesData")
+        advertisement.setValue(ad.adType, forKey: "type")
+        advertisement.setValue(ad.description, forKey: "title")
+        advertisement.setValue(ad.price, forKey: "price")
         
         coreData.saveContext()
+            })
+    }
+    static func deleteAd(index:Int) {
+
+        let coreData = CoreData()
+        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
+        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
+        do {
+            var results = try context.fetch(request)
+            let item = results.remove(at: index)
+            context.delete(item)
+            do {
+                try context.save()
+            } catch {
+                print("Error saving context")
+            }
+
+        }
+        catch {
+            fatalError()
+        }
+    }
+    static func clearAds() {
+        let coreData = CoreData()
+        let entity = "Advertisement"
+        let context = coreData.persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+
+    }
+    static func loadKeys() -> [SavedAd]{
+
+        let coreData = CoreData()
+        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
+        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
+        var adsArray = [SavedAd]()
+
+
+        do {
+            var results = try context.fetch(request)
+            for result in results {
+                let title = result.title!
+                let id = result.id
+                let imageData = result.imagesData!
+                let type = result.type!
+                let location = result.location!
+                let score = result.score
+                let price = result.price!
+                let saved = true
+
+                let savedAd = SavedAd(location: location, score: score, id: Int(id), imageData: imageData as NSData, adType: type, description: title, type: type, price: price, saved: saved)
+                adsArray.append(savedAd)
+
+            }
+
+            
+        }
+        catch {
+            fatalError()
+        }
+        return adsArray
+    }
+    static func viewCoreData() {
+
+        let coreData = CoreData()
+        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
+        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
+        do {
+            var results = try context.fetch(request)
+            print(results)
+        }
+        catch {
+            fatalError()
+        }
     }
 }
 

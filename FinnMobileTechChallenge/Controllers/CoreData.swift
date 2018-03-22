@@ -24,6 +24,7 @@ class CoreData {
         return container
     }()
 
+
     // MARK: - Core Data Saving support
 
     func saveContext () {

@@ -15,6 +15,8 @@ class MainFeedViewController: UIViewController {
     // MARK: - Instance Variables
     fileprivate let cellIdentifier = "adCell"
     private var ads = [Ad]()
+    private var savedAds = [Ad]()
+    private var adsHolder = [Ad]()
 
     // MARK: - IB Outlets
     @IBOutlet weak var adCollectionView: UICollectionView!
@@ -23,7 +25,10 @@ class MainFeedViewController: UIViewController {
     // MARK: - IB Actions
 
     @IBAction func toggleMainFeed(_ sender: Any) {
-
+        adService.clearAds()
+        adService.viewCoreData()
+        
+        print("pressed")
     }
 }
 
@@ -62,10 +67,9 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        ad.saved = adService.isSaved(saved: ad.saved)
-
-
+        ad.saved = adService.toggleSave(saved: ad.saved, ad:ad, index:indexPath.row)
         adCollectionView.reloadData()
+
     }
 }
 

@@ -12,7 +12,7 @@ class SavedAdsViewController: UIViewController {
     
     // MARK: - Instance Variables
     fileprivate let cellIdentifier = "adCell"
-    private var ads = [Ad]()
+    private var ads = [SavedAd]()
     
     // MARK: - IB Outlets
     @IBOutlet weak var adCollectionView: UICollectionView!
@@ -25,6 +25,8 @@ extension SavedAdsViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //TODO: Request saved ads from core data through adService
+        ads = adService.loadKeys()
+        self.adCollectionView.reloadData()
     }
 }
 
@@ -42,7 +44,7 @@ extension SavedAdsViewController: UICollectionViewDelegate, UICollectionViewData
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = adService.priceChecker(string: ad.price)
-        cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
+        cell.adImage.image = UIImage(data: ad.imageData as Data)
         return cell
     }
 }

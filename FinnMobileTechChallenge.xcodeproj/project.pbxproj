@@ -13,6 +13,7 @@
 		F4159D70206069C400EBF126 /* adService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4159D6F206069C400EBF126 /* adService.swift */; };
 		F43D90FA2060FC8600BDF571 /* AdCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F43D90F82060FC8600BDF571 /* AdCoreDataModel.xcdatamodeld */; };
 		F43D90FC2060FDD300BDF571 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43D90FB2060FDD300BDF571 /* CoreData.swift */; };
+		F43D9108206340AF00BDF571 /* SavedAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43D9107206340AF00BDF571 /* SavedAd.swift */; };
 		F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0D2060355E003FA12D /* AppDelegate.swift */; };
 		F4832C102060355E003FA12D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C0F2060355E003FA12D /* MainFeedViewController.swift */; };
 		F4832C122060355E003FA12D /* SavedAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C112060355E003FA12D /* SavedAdsViewController.swift */; };
@@ -58,6 +59,7 @@
 		F4159D6F206069C400EBF126 /* adService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adService.swift; sourceTree = "<group>"; };
 		F43D90F92060FC8600BDF571 /* AdCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		F43D90FB2060FDD300BDF571 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		F43D9107206340AF00BDF571 /* SavedAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAd.swift; sourceTree = "<group>"; };
 		F4832C0A2060355E003FA12D /* FinnMobileTechChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinnMobileTechChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4832C0D2060355E003FA12D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4832C0F2060355E003FA12D /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				F4832C4320603726003FA12D /* Ad.swift */,
 				F43D90F82060FC8600BDF571 /* AdCoreDataModel.xcdatamodeld */,
+				F43D9107206340AF00BDF571 /* SavedAd.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				F4832C4C20603899003FA12D /* FinnAPI.swift in Sources */,
 				F4832C52206038D2003FA12D /* RouterProtocol.swift in Sources */,
 				F43D90FC2060FDD300BDF571 /* CoreData.swift in Sources */,
+				F43D9108206340AF00BDF571 /* SavedAd.swift in Sources */,
 				F4159D70206069C400EBF126 /* adService.swift in Sources */,
 				F4832C4E206038A6003FA12D /* NetworkingRouter.swift in Sources */,
 				F4832C0E2060355E003FA12D /* AppDelegate.swift in Sources */,
