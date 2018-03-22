@@ -12,7 +12,7 @@ class SavedAdsViewController: UIViewController {
     
     // MARK: - Instance Variables
     fileprivate let cellIdentifier = "adCell"
-    private var ads = [SavedAd]()
+    private var ads = [Ad]()
     
     // MARK: - IB Outlets
     @IBOutlet weak var adCollectionView: UICollectionView!
@@ -40,11 +40,13 @@ extension SavedAdsViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
         let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
-        
+        let saveButtonImage = adService.isSavedButtonToogle(saved: ad.saved)
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = adService.priceChecker(string: ad.price)
-        cell.adImage.image = UIImage(data: ad.imageData as Data)
+        cell.adImage.image = UIImage(data: ad.imageData as! Data)
+        cell.saveButton.setImage(saveButtonImage, for: .normal)
+        
         return cell
     }
 }

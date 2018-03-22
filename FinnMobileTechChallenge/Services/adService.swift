@@ -38,7 +38,8 @@ struct adService {
                     let type = ad[FinnAPI.adKeys.type].stringValue
                     var price = ad[FinnAPI.adKeys.price][FinnAPI.adKeys.priceValue].stringValue
                     var saved:Bool = false
-                    let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price, saved:saved)
+                    var imageData:NSData? = nil
+                    let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price, saved:saved, imageData:imageData)
                     
                     adObjectArray.append(adObject)
                 }
@@ -84,7 +85,7 @@ struct adService {
     static func toggleSave(saved:Bool, ad:Ad, index:Int) -> Bool {
         var result = Bool()
         if saved == true {
-            adService.deleteAd(index: index)
+            adService.deleteAd(title: ad.description)
             result = false
             return result
         }
@@ -127,42 +128,25 @@ struct adService {
             let entity = NSEntityDescription.entity(forEntityName: "Advertisement", in: (context))
             let advertisement = NSManagedObject(entity: entity!, insertInto: context)
 
-        
-        let imageData = UIImageJPEGRepresentation(image, 1) as! NSData
+
+            let imageData = UIImageJPEGRepresentation(image, 1) as! NSData
             print(type(of: imageData))
 
 
-        advertisement.setValue(ad.location, forKey: "location")
-        advertisement.setValue(ad.score, forKey: "score")
-        advertisement.setValue(ad.id, forKey: "id")
-        advertisement.setValue(imageData, forKey: "imagesData")
-        advertisement.setValue(ad.adType, forKey: "type")
-        advertisement.setValue(ad.description, forKey: "title")
-        advertisement.setValue(ad.price, forKey: "price")
-        
-        coreData.saveContext()
-            })
-    }
-    static func deleteAd(index:Int) {
+            advertisement.setValue(ad.location, forKey: "location")
+            advertisement.setValue(ad.score, forKey: "score")
+            advertisement.setValue(ad.id, forKey: "id")
+            advertisement.setValue(imageData, forKey: "imageData")
+            advertisement.setValue(ad.adType, forKey: "type")
+            advertisement.setValue(ad.description, forKey: "title")
+            advertisement.setValue(ad.price, forKey: "price")
+            advertisement.setValue(ad.imageURL, forKey: "imageURL")
+            advertisement.setValue(true, forKey: "savedState")
 
-        let coreData = CoreData()
-        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
-        let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
-        do {
-            var results = try context.fetch(request)
-            let item = results.remove(at: index)
-            context.delete(item)
-            do {
-                try context.save()
-            } catch {
-                print("Error saving context")
-            }
-
-        }
-        catch {
-            fatalError()
-        }
+            coreData.saveContext()
+        })
     }
+
     static func clearAds() {
         let coreData = CoreData()
         let entity = "Advertisement"
@@ -180,12 +164,28 @@ struct adService {
         }
 
     }
-    static func loadKeys() -> [SavedAd]{
+    static func deleteAd(title:String) {
+        let coreData = CoreData()
+        let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
+        do {
+            let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
+            request.predicate = NSPredicate(format: "title == %@", title)
+            let fetchedResults = try context.fetch(request) as! [Advertisement]
+            let result = fetchedResults.first
+            print(result?.title!)
+            context.delete(result!)
+            try context.save()
+        }
+        catch {
+            print("Error fetching ad")
+        }
+    }
+    static func loadKeys() -> [Ad]{
 
         let coreData = CoreData()
         let context:NSManagedObjectContext = coreData.persistentContainer.viewContext
         let request:NSFetchRequest<Advertisement> = Advertisement.fetchRequest()
-        var adsArray = [SavedAd]()
+        var adsArray = [Ad]()
 
 
         do {
@@ -193,14 +193,15 @@ struct adService {
             for result in results {
                 let title = result.title!
                 let id = result.id
-                let imageData = result.imagesData!
+                let imageData = result.imageData! as! NSData
                 let type = result.type!
                 let location = result.location!
                 let score = result.score
                 let price = result.price!
-                let saved = true
+                let saved = result.savedState
+                let imageURL = result.imageURL
 
-                let savedAd = SavedAd(location: location, score: score, id: Int(id), imageData: imageData as NSData, adType: type, description: title, type: type, price: price, saved: saved)
+                let savedAd = Ad(location: location, score: score, id: Int(id), imageURL:(imageURL)!, adType: type, description: title, type: type, price: price, saved: saved, imageData: imageData)
                 adsArray.append(savedAd)
 
             }
