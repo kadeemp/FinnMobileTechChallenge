@@ -20,9 +20,9 @@ class Ad {
     var type:String
     var imageData:NSData?
 
-    //Since purchases won't be made in the case of this app, it is
-    //best to keep it as a String since making it an int or double
-    //would return a zero instead of a blank in the collectionView
+    /* Since purchases won't be made in the case of this app, it is
+    best to keep it as a String since making it an int or double
+    would return a zero instead of a blank in the collectionView */
     var price:String
     var saved:Bool
 

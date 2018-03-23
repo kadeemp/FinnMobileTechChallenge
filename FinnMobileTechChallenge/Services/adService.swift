@@ -34,9 +34,9 @@ struct adService {
                     let adType = ad[FinnAPI.adKeys.adType].stringValue
                     let description = ad[FinnAPI.adKeys.description].stringValue
                     let type = ad[FinnAPI.adKeys.type].stringValue
-                    var price = ad[FinnAPI.adKeys.price][FinnAPI.adKeys.priceValue].stringValue
-                    var saved:Bool = false
-                    var imageData:NSData? = nil
+                    let price = ad[FinnAPI.adKeys.price][FinnAPI.adKeys.priceValue].stringValue
+                    let saved:Bool = false
+                    let imageData:NSData? = nil
                     let adObject = Ad(location: location, score: score, id: id, imageURL: imageURL, adType: adType, description: description, type: type, price: price, saved:saved, imageData:imageData)
                     
                     adObjectArray.append(adObject)
@@ -52,7 +52,7 @@ struct adService {
     // If a price is present, the type of currency should be added to it
     static func priceChecker(string:String) -> String {
         if string != "" {
-            var newPrice = string + " kr"
+            let newPrice = string + " kr"
             return newPrice
         } else {
             return string
@@ -66,6 +66,7 @@ struct adService {
         let imageURL = URL(string:imageUrlString)
         return imageURL!
     }
+    
     static func saveButtonToggle(saved:Bool) -> UIImage {
         var image = UIImage()
         if saved == true {
@@ -77,6 +78,7 @@ struct adService {
             return image
         }
     }
+    
     static func toggleSave(ad:Ad) -> Bool {
         var result = Bool()
         if ad.saved == true {
@@ -90,39 +92,31 @@ struct adService {
             return result
         }
     }
-
+    
     static func downloadAdImage(ad:Ad, imageUrlString:String, completion: @escaping ReturnImageCompletion) {
         let url = adService.imageURLConverter(imageUrlPath: ad.imageURL)
         Alamofire.request(url).responseImage { response in
-
+            
             if let image = response.result.value {
                 completion(image)
             }
-
         }
     }
     
-
-
     static func unSavedAdSeperator(ads:[Ad])-> [Ad] {
         var result:[Ad] = []
-
+        
         for ad in ads {
             let isSaved = ad.saved
-
+            
             if isSaved == false {
                 let seperatedAd = ad
                 result.append(seperatedAd)
-
             }
-            
-
         }
         return result
-
     }
-
-
+    
     static func adChecker(ads:[Ad], titles:[String]) {
         for ad in ads {
             let adTitle = ad.description
@@ -131,12 +125,8 @@ struct adService {
                     ad.saved = true
                 }
             }
-
         }
-
     }
-
-
 }
 
 

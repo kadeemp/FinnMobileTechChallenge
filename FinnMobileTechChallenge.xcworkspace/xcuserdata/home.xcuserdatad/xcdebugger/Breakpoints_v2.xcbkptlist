@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinnMobileTechChallenge/Controllers/MainFeedViewController.swift"
-            timestampString = "543464973.890976"
+            timestampString = "543467602.529672"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,61 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinnMobileTechChallenge/Controllers/MainFeedViewController.swift"
-            timestampString = "543464973.891405"
+            timestampString = "543467602.529767"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinnMobileTechChallenge/Networking/NetworkingProvider.swift"
-            timestampString = "543464973.891723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "request(router:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static FinnMobileTechChallenge.NetworkingProvider.request(router: FinnMobileTechChallenge.NetworkingRouter, completionHandler: (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "FinnMobileTechChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/home/Desktop/Directory/Swift/FinnMobileTechChallenge/FinnMobileTechChallenge/Networking/NetworkingProvider.swift"
-                  timestampString = "543445622.859206"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "1112">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static FinnMobileTechChallenge.NetworkingProvider.request(router: FinnMobileTechChallenge.NetworkingRouter, completionHandler: (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Any&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "FinnMobileTechChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/home/Desktop/Directory/Swift/FinnMobileTechChallenge/FinnMobileTechChallenge/Networking/NetworkingProvider.swift"
-                  timestampString = "543445622.86154"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "1120">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

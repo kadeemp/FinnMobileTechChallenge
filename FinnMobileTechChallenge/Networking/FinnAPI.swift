@@ -24,10 +24,9 @@ struct FinnAPI {
             fatalError("Error creating Ad JSON URL")
         }
     }
-    //TODO: Adjust so that adservice doesn't have to create its own URL
     
     static var getImages: URL {
-        let imageURL = URL(string:imageBaseURL)
+        _ = URL(string:imageBaseURL)
         do {
             return try imageBaseURL.asURL()
         } catch {
