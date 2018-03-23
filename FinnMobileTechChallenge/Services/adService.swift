@@ -26,8 +26,6 @@ struct adService {
                 let json = JSON(data!)
                 let jsonAdArray = json["items"].arrayValue
                 
-                //TODO: Change ad model init to parse data from there
-                
                 for ad in jsonAdArray {
                     let location = ad[FinnAPI.adKeys.location].stringValue
                     let score = ad[FinnAPI.adKeys.score].doubleValue
@@ -50,9 +48,6 @@ struct adService {
         })
         return adObjectArray
     }
-    
-    //TODO: - Add Function that loads all ads from CoreData w/completion
-    //TODO: - Add Function that deletes a specific ad from Core Data
     
     // If a price is present, the type of currency should be added to it
     static func priceChecker(string:String) -> String {
@@ -109,7 +104,23 @@ struct adService {
     
 
 
+    static func unSavedAdSeperator(ads:[Ad])-> [Ad] {
+        var result:[Ad] = []
 
+        for ad in ads {
+            let isSaved = ad.saved
+
+            if isSaved == false {
+                let seperatedAd = ad
+                result.append(seperatedAd)
+
+            }
+            
+
+        }
+        return result
+
+    }
 
 
     static func adChecker(ads:[Ad], titles:[String]) {

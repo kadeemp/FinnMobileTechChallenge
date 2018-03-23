@@ -26,20 +26,7 @@ class MainFeedViewController: UIViewController {
     // MARK: - IB Actions
     @IBAction func toggleMainFeed(_ sender: Any) {
 
-        if adsToggled == false {
-            adsHolder = ads
-            ads = CoreData.loadAds()
-            adsToggled = true
-            adCollectionView.reloadData()
-            self.title = "Lagrede Annonser"
-        }
-        else if adsToggled == true {
-            ads = adsHolder
-            adsToggled = false
-            adCollectionView.reloadData()
-            self.title = "Funksjoner Annonser"
-
-        }
+        toggleMainFeed()
     }
 }
 
@@ -110,6 +97,31 @@ extension MainFeedViewController {
 
         }
     }
+
+    func toggleMainFeed() {
+        if adsToggled == false {
+            adsHolder = adService.unSavedAdSeperator(ads: ads)
+            ads = CoreData.loadAds()
+            adsToggled = true
+            adCollectionView.reloadData()
+            self.title = "Lagrede Annonser"
+        }
+        else if adsToggled == true {
+            for ad in ads {
+                adsHolder.insert(ad, at: 0)
+            }
+            ads = adsHolder
+            adsToggled = false
+            adCollectionView.reloadData()
+            self.title = "Funksjoner Annonser"
+
+        }
+    }
+
+    //MARK:- Bugs
+    /*When you remove an ad from being saved from
+     the saved ads collectionView, It doesn't update
+     the data in the featured ads section*/
 }
 
 
