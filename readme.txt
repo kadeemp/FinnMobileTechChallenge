@@ -3,7 +3,7 @@ Solution Description: This project demonstrates knowledge of various Swift struc
 
 I'm generally happy with how I structured my code. I also think that this layout works well for displaying Ads.
 
-I decided to work on networking before anything else. I should have kept networking more simple so I could have more time working with the data. This would have allowed me to make better UI.
+I decided to work on networking before anything else. I should have kept networking more simple so I could have more time working with the data. This would have allowed me to make better UX.
 
 A list of things I had in mind for this project given more time include:
 
