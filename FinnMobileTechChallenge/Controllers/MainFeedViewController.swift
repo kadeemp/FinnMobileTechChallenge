@@ -40,9 +40,11 @@ extension MainFeedViewController {
         _ = adService.loadAds { [weak self] allAds in
             guard let strongSelf = self else { return }
             strongSelf.ads = allAds
+            strongSelf.ads = (self?.alphabeticalSort(adArray: (self?.ads)!))!
             adService.adChecker(ads: strongSelf.ads, titles: CoreData.loadAdTitles())
             strongSelf.adCollectionView.reloadData()
         }
+
         loadSavedAds()
     }
 }
@@ -74,7 +76,7 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
         let ad = ads[indexPath.row]
         loadImageData(ad: ad)
         ad.saved = adService.toggleSave(ad:ad)
-        adCollectionView.reloadData()
+         adCollectionView.reloadData()
         
     }
 }
@@ -97,6 +99,13 @@ extension MainFeedViewController {
             
         }
     }
+    func alphabeticalSort(adArray:[Ad]) -> [Ad] {
+        var newArray:[Ad] = []
+        //the compare func i created for int wont work here
+        //newArray = adArray.sorted(by: { $0.id.compare($1.id) == .orderedDescending })
+        newArray = adArray.sorted(by: { $0.description.compare($1.description) == .orderedDescending })
+        return newArray
+    }
     
     func toggleMainFeed() {
         if adsToggled == false {
@@ -111,6 +120,7 @@ extension MainFeedViewController {
                 adsHolder.insert(ad, at: 0)
             }
             ads = adsHolder
+            ads = alphabeticalSort(adArray: ads)
             adsToggled = false
             adCollectionView.reloadData()
             self.title = "Funksjoner Annonser"
