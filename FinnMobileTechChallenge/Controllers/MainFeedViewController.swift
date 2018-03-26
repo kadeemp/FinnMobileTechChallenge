@@ -40,7 +40,7 @@ extension MainFeedViewController {
         _ = adService.loadAds { [weak self] allAds in
             guard let strongSelf = self else { return }
             strongSelf.ads = allAds
-            strongSelf.ads = (self?.alphabeticalSort(adArray: (self?.ads)!))!
+            strongSelf.ads = (self?.alphabeticalLocationSort(adArray: (self?.ads)!))!
             adService.adChecker(ads: strongSelf.ads, titles: CoreData.loadAdTitles())
             strongSelf.adCollectionView.reloadData()
         }
@@ -58,57 +58,63 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let ad = ads[indexPath.row]
-        let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
         let saveButtonImage = adService.saveButtonToggle(saved: ad.saved)
+        let cell = adCollectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AdCollectionViewCell
+
         cell.adDescription.text = ad.description
         cell.adLocation.text = ad.location
         cell.adPrice.text = adService.priceChecker(string: ad.price)
+        cell.saveButton.setImage(saveButtonImage, for: .normal)
         if ad.imageData == nil {
             cell.adImage.af_setImage(withURL: adService.imageURLConverter(imageUrlPath: ad.imageURL))
         } else {
             cell.adImage.image = UIImage(data: ad.imageData! as Data)
         }
-        cell.saveButton.setImage(saveButtonImage, for: .normal)
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let ad = ads[indexPath.row]
-        loadImageData(ad: ad)
+
+        var ad = ads[indexPath.row]
         ad.saved = adService.toggleSave(ad:ad)
-         adCollectionView.reloadData()
+        adCollectionView.reloadData()
         
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+
+        let cell: AdCollectionViewCell = adCollectionView.cellForItem(at: indexPath) as! AdCollectionViewCell
+        cell.adDescription.textColor = UIColor(red: 123/255, green: 182/255, blue: 210/255, alpha: 1.0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+
+        let cell: AdCollectionViewCell = adCollectionView.cellForItem(at: indexPath) as! AdCollectionViewCell
+        cell.adDescription.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
     }
 }
 
 extension MainFeedViewController {
-    
-    func loadImageData(ad:Ad) {
-        if ad.imageData == nil {
-            adService.downloadAdImage(ad: ad, imageUrlString: (FinnAPI.imageBaseURL + ad.imageURL), completion: { image in
-                let imageData = UIImageJPEGRepresentation(image, 1)! as NSData
-                ad.imageData = imageData
-            })
-        }
-    }
-    
+
     func loadSavedAds() {
+
         if ads.count == 0 {
             ads = savedAds
             adCollectionView.reloadData()
-            
         }
     }
-    func alphabeticalSort(adArray:[Ad]) -> [Ad] {
-        var newArray:[Ad] = []
-        //the compare func i created for int wont work here
-        //newArray = adArray.sorted(by: { $0.id.compare($1.id) == .orderedDescending })
-        newArray = adArray.sorted(by: { $0.description.compare($1.description) == .orderedDescending })
-        return newArray
+    func alphabeticalLocationSort(adArray:[Ad]) -> [Ad] {
+
+        var sortedArray:[Ad] = []
+        sortedArray = adArray.sorted(by: { $0.location.compare($1.location) == .orderedAscending })
+        return sortedArray
     }
     
     func toggleMainFeed() {
+
         if adsToggled == false {
+
             adsHolder = adService.unSavedAdSeperator(ads: ads)
             ads = CoreData.loadAds()
             adsToggled = true
@@ -116,15 +122,15 @@ extension MainFeedViewController {
             self.title = "Lagrede Annonser"
         }
         else if adsToggled == true {
+
             for ad in ads {
-                adsHolder.insert(ad, at: 0)
+                adsHolder.append(ad)
             }
             ads = adsHolder
-            ads = alphabeticalSort(adArray: ads)
+            ads = alphabeticalLocationSort(adArray: ads)
             adsToggled = false
             adCollectionView.reloadData()
             self.title = "Funksjoner Annonser"
-            
         }
     }
     

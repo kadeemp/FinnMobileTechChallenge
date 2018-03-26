@@ -42,6 +42,7 @@ struct adService {
                     adObjectArray.append(adObject)
                 }
                 DispatchQueue.main.async {
+                  
                     completion(adObjectArray)
                 }
             }
