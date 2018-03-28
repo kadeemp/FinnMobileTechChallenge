@@ -18,8 +18,6 @@
 		F4832C152060355E003FA12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4832C132060355E003FA12D /* Main.storyboard */; };
 		F4832C172060355E003FA12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4832C162060355E003FA12D /* Assets.xcassets */; };
 		F4832C1A2060355E003FA12D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4832C182060355E003FA12D /* LaunchScreen.storyboard */; };
-		F4832C252060355E003FA12D /* FinnMobileTechChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C242060355E003FA12D /* FinnMobileTechChallengeTests.swift */; };
-		F4832C302060355E003FA12D /* FinnMobileTechChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C2F2060355E003FA12D /* FinnMobileTechChallengeUITests.swift */; };
 		F4832C4420603726003FA12D /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C4320603726003FA12D /* Ad.swift */; };
 		F4832C46206037A0003FA12D /* AdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C45206037A0003FA12D /* AdCollectionViewCell.swift */; };
 		F4832C4C20603899003FA12D /* FinnAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4832C4B20603899003FA12D /* FinnAPI.swift */; };
@@ -65,11 +63,7 @@
 		F4832C192060355E003FA12D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4832C1B2060355E003FA12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4832C202060355E003FA12D /* FinnMobileTechChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinnMobileTechChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4832C242060355E003FA12D /* FinnMobileTechChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnMobileTechChallengeTests.swift; sourceTree = "<group>"; };
-		F4832C262060355E003FA12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4832C2B2060355E003FA12D /* FinnMobileTechChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinnMobileTechChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4832C2F2060355E003FA12D /* FinnMobileTechChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnMobileTechChallengeUITests.swift; sourceTree = "<group>"; };
-		F4832C312060355E003FA12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4832C4320603726003FA12D /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		F4832C45206037A0003FA12D /* AdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4832C4B20603899003FA12D /* FinnAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinnAPI.swift; sourceTree = "<group>"; };
@@ -142,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				F4832C0C2060355E003FA12D /* FinnMobileTechChallenge */,
-				F4832C232060355E003FA12D /* FinnMobileTechChallengeTests */,
-				F4832C2E2060355E003FA12D /* FinnMobileTechChallengeUITests */,
 				F4832C0B2060355E003FA12D /* Products */,
 				F07C00D26122B2DD9BD1C096 /* Pods */,
 				A5599C6B8552C401675247A1 /* Frameworks */,
@@ -174,24 +166,6 @@
 				F4832C1B2060355E003FA12D /* Info.plist */,
 			);
 			path = FinnMobileTechChallenge;
-			sourceTree = "<group>";
-		};
-		F4832C232060355E003FA12D /* FinnMobileTechChallengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				F4832C242060355E003FA12D /* FinnMobileTechChallengeTests.swift */,
-				F4832C262060355E003FA12D /* Info.plist */,
-			);
-			path = FinnMobileTechChallengeTests;
-			sourceTree = "<group>";
-		};
-		F4832C2E2060355E003FA12D /* FinnMobileTechChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F4832C2F2060355E003FA12D /* FinnMobileTechChallengeUITests.swift */,
-				F4832C312060355E003FA12D /* Info.plist */,
-			);
-			path = FinnMobileTechChallengeUITests;
 			sourceTree = "<group>";
 		};
 		F4832C3D206036A8003FA12D /* Controllers */ = {
@@ -549,7 +523,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4832C252060355E003FA12D /* FinnMobileTechChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +530,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4832C302060355E003FA12D /* FinnMobileTechChallengeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

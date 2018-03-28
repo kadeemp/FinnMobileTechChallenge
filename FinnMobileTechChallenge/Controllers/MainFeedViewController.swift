@@ -36,7 +36,7 @@ extension MainFeedViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.title = "Funksjoner Annonser"
-        savedAds = CoreData.loadAds()
+
         _ = adService.loadAds { [weak self] allAds in
             guard let strongSelf = self else { return }
             strongSelf.ads = allAds
@@ -44,7 +44,7 @@ extension MainFeedViewController {
             adService.adChecker(ads: strongSelf.ads, titles: CoreData.loadAdTitles())
             strongSelf.adCollectionView.reloadData()
         }
-
+        savedAds = CoreData.loadAds()
         loadSavedAds()
     }
 }
